@@ -1,0 +1,138 @@
+---
+title: "Sample_queries"
+format: html
+editor: visual
+---
+
+### Query showing how many times each medicine has been prescribed to each pet.
+
+```{sql}
+SELECT p.idPets AS pet_id,
+p.name AS pet_name,
+COUNT(pre.idPrescriptions) AS number_of_prescriptions,
+m.name AS medications_name
+FROM pets p 
+JOIN visits v ON v.idPets = p.idPets
+JOIN visits_history vh ON vh.idVisits = v.idVisits
+JOIN prescriptions pre ON pre.idPrescriptions = vh.idPrescriptions
+JOIN prescriptions_medications prem ON prem.idPrescriptions = pre.idPrescriptions
+JOIN medications m ON m.idMedications = prem.idMedications
+GROUP BY m.idMedications, p.idPets
+ORDER BY p.idPets;
+```
+
+### Query showing all pets that had more than 2 diagnoses in their visit history.
+
+```{sql}
+SELECT p.idPets AS pet_id,
+p.name AS pet_name
+FROM pets p 
+JOIN visits v ON v.idPets = p.idPets
+JOIN visits_history vh ON vh.idVisits = v.idVisits
+JOIN diagnoses_visits_history dvh ON dvh.idVisits = vh.idVisits
+JOIN diagnoses diag ON diag.idDiagnoses = dvh.idDiagnoses
+GROUP BY p.idPets, p.name
+HAVING COUNT(diag.idDiagnoses) > 2
+ORDER BY p.idPets;
+```
+
+### Query showing how many visits each doctor had for each species of pet in 2025.
+
+```{sql}
+SELECT d.idEmployees AS doctor_id,
+CONCAT(e.first_name, ' ',e.last_name) AS doctor_name,
+p.species AS pet_species,
+COUNT(v.idVisits) AS total_visits
+FROM pets p
+JOIN visits v ON v.idPets = p.idPets
+JOIN doctors d ON d.idEmployees = v.idEmployees
+JOIN employees e ON e.idEmployees = d.idEmployees
+WHERE YEAR(v.date) = 2025
+GROUP BY d.idEmployees, p.species
+ORDER BY total_visits;
+```
+
+### Query showing the number of employees of each type
+
+```{sql}
+SELECT 'Doctor' AS employee_type,
+COUNT(*) AS number_of_employees
+FROM doctors
+UNION ALL
+SELECT 'Receptionist' AS employee_type,
+COUNT(*) AS number_of_employees
+FROM receptionists
+UNION ALL
+SELECT 'Pharmacist' AS employee_type,
+COUNT(*) AS number_of_employees
+FROM pharmacists
+UNION ALL
+SELECT 'Manual Worker' AS employee_type,
+COUNT(*) AS number_of_employees
+FROM manual_workers
+UNION ALL
+SELECT 'Cleaning Staff' AS employee_type,
+COUNT(*) AS number_of_employees
+FROM cleaning_staff;
+```
+
+### Query categorizing each pet based on number of visits they had.
+
+```{sql}
+SELECT p.idPets AS pet_id,
+p.name AS pet_name,
+CASE
+	WHEN COUNT(v.idVisits) > 10 THEN 'more than 10'
+  WHEN COUNT(v.idVisits) > 5 THEN 'more than 5 but less than 10'
+  ELSE '5 or less'
+END AS 'number_of_visits'
+FROM pets p
+LEFT JOIN visits v ON p.idPets = v.idPets
+GROUP BY p.idPets, p.name;
+```
+
+### Query showing the owner and the number of pets they have
+
+```{sql}
+SELECT o.idOwners AS owner_id,
+CONCAT(o.first_name, ' ',o.last_name) AS owner_name,
+(SELECT COUNT(*) FROM pets p WHERE p.idOwners = o.idOwners) AS number_of_pets
+FROM owners o  
+ORDER BY number_of_pets;
+```
+
+### Query showing the average cost of a visit to each doctor
+
+```{sql}
+SELECT e.idEmployees AS employee_id,
+CONCAT(e.first_name, ' ',e.last_name) AS doctor_name,
+ROUND(AVG(v.cost),2) AS average_visit_cost
+FROM employees e
+JOIN doctors d ON d.idEmployees = e.idEmployees
+LEFT JOIN visits v ON v.idEmployees = d.idEmployees
+GROUP BY e.idEmployees;
+```
+
+### Query showing all 24h on call manual workers with their specialty and hourly rate.
+
+```{sql}
+SELECT manu.idEmployees AS employee_id,
+manu.specialty AS specialty,
+e.hourly_rate
+FROM manual_workers manu
+JOIN employees e ON e.idEmployees = manu.idEmployees
+WHERE manu.on_call_24h = 1
+ORDER BY e.hourly_rate DESC;
+```
+
+### Query showing the 3 most commonly prescribed medications
+
+```{sql}
+SELECT  m.name AS medication_name,
+COUNT(prem.idMedications) AS number_of_prescriptions
+FROM medications m
+JOIN prescriptions_medications prem ON prem.idMedications = m.idMedications
+GROUP BY m.idMedications
+ORDER BY number_of_prescriptions DESC
+LIMIT 3;
+```
