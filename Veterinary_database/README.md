@@ -61,7 +61,7 @@ visits
 
 MySQL Workbench was used to create the database.
 
-## cloning repository:
+## Cloning repository:
 
     git clone https://github.com/JanWalkiewicz/Sql_project.git
 
