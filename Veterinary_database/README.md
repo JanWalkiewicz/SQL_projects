@@ -4,7 +4,7 @@ Jan Walkiewicz
 
 ### EER diagram:
 
-<img src="EER_diagram.png" width="60%" height="60%"/>
+<img src="EER_diagram.png" width="50%" height="50%"/>
 
 # EN/PL
 
@@ -58,6 +58,8 @@ visits
 11\) **diagnoses** - information about diagnoses
 
 12\) **diseases** - information about diseases
+
+MySQL Workbench was used to create the database.
 
 ## cloning repository:
 
@@ -113,6 +115,8 @@ różnych wizytach
 11\) **diagnoses** - informacje o diagnozach
 
 12\) **diseases** - informacje o chorobach
+
+Przy tworzeniu bazy wykorzystano MySQL Workbench
 
 ## Klonowanie repozytorium:
 
