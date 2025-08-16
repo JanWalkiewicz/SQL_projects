@@ -1,5 +1,3 @@
-# README.qmd
-
 # Author:
 
 Jan Walkiewicz
@@ -12,7 +10,7 @@ Jan Walkiewicz
 
 # EN
 
-#### The database code contains the following elements:
+### The database code contains the following elements:
 
 1\) Creating tables
 
@@ -24,7 +22,7 @@ Jan Walkiewicz
 
 5\) Creating sample triggers
 
-#### The created database contains the following tables:
+### The created database contains the following tables:
 
 1\) **employees** - general information about employees
 
@@ -67,7 +65,7 @@ visits
 
 # PL
 
-#### W kodzie bazy znajdują się następujące elementy:
+### W kodzie bazy znajdują się następujące elementy:
 
 1\) Tworzenie tabel
 
@@ -79,7 +77,7 @@ visits
 
 5\) Tworzenie przykładowych wyzwalaczy
 
-#### W stworzonej bazie znajdują sie następujące tabele:
+### W stworzonej bazie znajdują sie następujące tabele:
 
 1\) **employees** - ogólne informacje o pracownikach
 
