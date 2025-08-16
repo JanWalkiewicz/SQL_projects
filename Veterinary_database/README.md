@@ -4,7 +4,7 @@ Jan Walkiewicz
 
 ### EER diagram:
 
-<img src="EER_diagram.png" width="80%"/>
+<img src="EER_diagram.png" width="60%" height="60%"/>
 
 # EN/PL
 
