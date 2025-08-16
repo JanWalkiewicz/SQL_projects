@@ -1,2 +1,7 @@
 *.sql linguist-language=SQL
+*.html linguist-vendored
+*.pdf linguist-vendored
+*.qmd linguist-vendored
+*.png linguist-vendored
+*.md linguist-vendored
 
