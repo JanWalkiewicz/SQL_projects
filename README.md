@@ -1,6 +1,6 @@
 # SQL_projects
 
-## PL
+## EN
 
 ### 1. [Veterinary_database](./Veterinary_database) - Relational Database Implementation in MySQL
 
