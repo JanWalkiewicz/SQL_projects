@@ -63,7 +63,6 @@ MySQL Workbench was used to create the database.
 
 ## Repository structure
 
-|                                                             |                                                                                                                                                                      |
 |-------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **File**                                                    | **Description**                                                                                                                                                      |
 | `Veterinary_database.sql`                                   | MySQL script containing the database schema implementation. Includes definitions for 18 tables, stored procedures, triggers automating logic, and reporting views.   |    
