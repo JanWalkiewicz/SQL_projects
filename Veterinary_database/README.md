@@ -127,9 +127,8 @@ Przy tworzeniu bazy wykorzystano MySQL Workbench
 
 ## Struktura repozytorium
 
-|                                                             |                                                                                                                                                                      |
-|-------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Plik**                                                    | **Opis**                                                                                                                                                             |
+|-------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `Veterinary_database.sql`                                   | Skrypt MySQL zawierający implementację schematu bazy danych. Obejmuje definicje 18 tabel, procedury składowane, triggery automatyzujące logikę oraz widoki raportowe |    
 | `Sample_queries.html/Sample_queries.pdf/Sample_queries.qmd` | Pliki zawierające przykładowe zapytania                                                                                                                              |
 | `EER_diagram.png`                                           | Wizualizacja diagramu EER stworzonej bazy (Wizualizacja architektury, kluczy oraz powiązań)                                                                          |
