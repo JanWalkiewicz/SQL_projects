@@ -62,9 +62,8 @@ visits
 MySQL Workbench was used to create the database.
 
 ## Repository structure
-|                                                             |                                                                                                                                                                      |
-|-------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **File**                                                    | **Description**                                                                                                                                                      |
+|-------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `Veterinary_database.sql`                                   | MySQL script containing the database schema implementation. Includes definitions for 18 tables, stored procedures, triggers automating logic, and reporting views.   |    
 | `Sample_queries.html/Sample_queries.pdf/Sample_queries.qmd` | Files containing sample queries                                                                                                                                      |
 | `EER_diagram.png`                                           | Visualization of the EER diagram for the created database (Visualization of relational architecture, foreign keys, and relationships)                                |
