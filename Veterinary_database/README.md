@@ -1,7 +1,3 @@
-# Author:
-
-Jan Walkiewicz
-
 ### EER diagram:
 
 <img src="EER_diagram.png" width="50%" height="50%"/>
@@ -72,6 +68,9 @@ MySQL Workbench was used to create the database.
 
     git clone https://github.com/JanWalkiewicz/Sql_project.git
 
+# Author:
+Jan Walkiewicz
+
 # PL
 
 ### W kodzie bazy znajdują się następujące elementy:
@@ -136,3 +135,6 @@ Przy tworzeniu bazy wykorzystano MySQL Workbench
 ## Klonowanie repozytorium:
 
     git clone https://github.com/JanWalkiewicz/Sql_project.git
+
+# Autor:
+Jan Walkiewicz
